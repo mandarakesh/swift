@@ -1,8 +1,10 @@
 const { MongoClient } = require("mongodb");
-const uri =
-  "mongodb+srv://qrewrakesh:185D1a0151@rakesh.cbifh.mongodb.net/test?retryWrites=true&w=majority";
+const dotenv = require("dotenv");
+dotenv.config();
 
-const client = new MongoClient(uri);
+const MONGO_URL = process.env.MONGO_URL;
+
+const client = new MongoClient(MONGO_URL);
 
 const connectDB = async () => {
   try {
